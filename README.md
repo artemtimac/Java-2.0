@@ -1,2 +1,3 @@
 # Java-2.0
-Aplana Testing Course
+
+@author Artem Tugushev
