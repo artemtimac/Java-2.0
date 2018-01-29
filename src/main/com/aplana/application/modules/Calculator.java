@@ -1,4 +1,4 @@
-package com.aplana.tasks;
+package com.aplana.application.modules;
 
 import java.util.Scanner;
 
@@ -8,20 +8,34 @@ import java.util.Scanner;
  * @author Artem Tugushev
  */
 public class Calculator {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+    public void runCalculator() {
+        Scanner sc = new Scanner(System.in);
 
         System.out.println("Enter the first number: ");
-        float firstNumber = scanner.nextFloat();
+        float firstNumber = sc.nextFloat();
+
+        System.out.println("Enter the operation: '+' - sum, '-' - subtract, '*' - multiply, ':' - divide");
+        String operation = sc.next();
+
         System.out.println("Enter the second number: ");
-        float secondNumber = scanner.nextFloat();
+        float secondNumber = sc.nextFloat();
 
-        sum(firstNumber, secondNumber);
-        subtract(firstNumber, secondNumber);
-        multiply(firstNumber, secondNumber);
-        divide(firstNumber, secondNumber);
-
-        scanner.close();
+        switch (operation) {
+            case "+":
+                sum(firstNumber, secondNumber);
+                break;
+            case "-":
+                subtract(firstNumber, secondNumber);
+                break;
+            case "*":
+                multiply(firstNumber, secondNumber);
+                break;
+            case ":":
+                divide(firstNumber, secondNumber);
+                break;
+            default:
+                System.out.println("You entered an incorrect operation!");
+        }
     }
 
     public static float sum(float firstNumber, float secondNumber) {
