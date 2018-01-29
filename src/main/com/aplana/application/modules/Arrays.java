@@ -1,14 +1,15 @@
 package com.aplana.application.modules;
 
+import java.util.Random;
 import java.util.Scanner;
 
 /**
- * Words
+ * Arrays methods
  *
  * @author Artem Tugushev
  */
 public class Arrays {
-    public String findTheLongestWord() {
+    public static String findTheLongestWord() {
         String[] words;
         Scanner scanner = new Scanner(System.in);
 
@@ -36,5 +37,36 @@ public class Arrays {
         return theLongestWord;
     }
 
+    public static int[] swapTheMaxAndMinElementsOfArray() {
+        int[] array = new int[20];
+        Random random = new Random();
 
+        // Fill an array with random numbers from -10 to 10
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(21) - 10;
+        }
+
+        // Find the max and min elements
+        int min = array[0];
+        int max = array[0];
+        int indexOfMin = 0;
+        int indexOfMax = 0;
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] > max) {
+                max = array[i];
+                indexOfMax = i;
+            }
+            else if (array[i] < min) {
+                min = array[i];
+                indexOfMin = i;
+            }
+        }
+
+        // Swap min and max in array
+        int temp = array[indexOfMax];
+        array[indexOfMax] = array[indexOfMin];
+        array[indexOfMin] = temp;
+
+        return array;
+    }
 }

@@ -24,8 +24,7 @@ public class Program {
                     calculator.runCalculator();
                     break;
                 case 2:
-                    Arrays arrays = new Arrays();
-                    arrays.findTheLongestWord();
+                    Arrays.findTheLongestWord();
                     break;
                 case 0:
                     break;
