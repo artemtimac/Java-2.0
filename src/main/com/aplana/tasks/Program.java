@@ -2,6 +2,7 @@ package com.aplana.tasks;
 
 import com.aplana.application.modules.Calculator;
 import com.aplana.application.modules.Arrays;
+import com.aplana.application.modules.Gift;
 
 import java.util.Scanner;
 
@@ -16,7 +17,7 @@ public class Program {
         int number;
 
         do {
-            System.out.println("Enter number of task: (1 - calculator, 2 - string array) [0 - exit]");
+            System.out.println("Enter number of task: (1 - calculator, 2 - string array, 3 - gifts) [0 - exit]");
             number = scanner.nextInt();
             switch (number) {
                 case 1:
@@ -25,6 +26,10 @@ public class Program {
                     break;
                 case 2:
                     Arrays.findTheLongestWord();
+                    break;
+                case 3:
+                    Gift.makeGiftBox(new Gift("Candy", 111, 1.5f, 15.25f), new Gift("Jellybean", 222, 0.7f, 7.50f),
+                            new Gift("Kinder Surprise", 333, 0.5f, 9.99f));
                     break;
                 case 0:
                     break;
