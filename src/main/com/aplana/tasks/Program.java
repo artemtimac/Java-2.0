@@ -1,6 +1,6 @@
 package com.aplana.tasks;
 
-import com.aplana.application.modules.Calculator;
+import com.aplana.application.modules.Calculator.*;
 import com.aplana.application.modules.Arrays;
 import com.aplana.application.modules.Gift;
 
